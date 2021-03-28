@@ -34,12 +34,7 @@ spec:
       containers:
       - name: mysql-container
         image: mysql-image
-        # env:
-        # - name: MYSQL_ROOT_PASSWORD
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: mysecret
-        #       key: db-password
+        imagePullPolicy: Never
         ports:
         - containerPort: 3306
           name: mysql
