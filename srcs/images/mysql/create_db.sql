@@ -1,4 +1,5 @@
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password';
 CREATE DATABASE test_db;
-CREATE USER 'test'@'127.0.0.1' IDENTIFIED BY 'test';
-GRANT ALL PRIVILEGES ON test_db.* TO 'test'@'127.0.0.1';
+CREATE USER 'test'@'%' IDENTIFIED BY 'test';
+GRANT ALL PRIVILEGES ON test.* TO 'test'@'%';
 FLUSH PRIVILEGES;

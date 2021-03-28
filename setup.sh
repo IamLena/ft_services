@@ -44,6 +44,7 @@ echo "${green}Creating services...${reset}"
 echo "${yellow}mysql${reset}"
 kubectl apply -f /srcs/services/pv.yaml
 kubectl apply -f /srcs/services/mysql.yaml
+kubectl apply -f /srcs/services/pma.yaml
 
 echo "${green}Your dashboard token:${reset}"
 TOKENNAME=`kubectl describe serviceaccount admin-user -n kubernetes-dashboard | grep 'Tokens' | awk  '{print $2}'`
