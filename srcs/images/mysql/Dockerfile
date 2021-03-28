@@ -1,17 +1,17 @@
-FROM alpine
+FROM	alpine:latest
 
-USER root
+RUN		apk update && apk upgrade\
+		&& apk add mariadb mariadb-client openrc
 
-COPY srcs/install.sh /tmp/install.sh
-COPY srcs/start_model.sh /tmp/start.sh
+COPY	create_db.sql .
+COPY	my.cnf /etc/
+RUN		chmod 0444 /etc/my.cnf
+COPY	start_mysql.sh .
+RUN		chmod +x start_mysql.sh
 
-RUN sh /tmp/install.sh 
+VOLUME	["/sys/fs/cgroup"]
+VOLUME	["/var/lib/mysql"]
 
-COPY srcs/telegraf_model.conf /etc/telegraf.conf
-COPY srcs/my.cnf /etc/mysql/my.cnf
+EXPOSE	3306
 
-VOLUME ["/var/lib/mysql"]
-
-EXPOSE 3306
-
-ENTRYPOINT /etc/init.d/telegraf start; sh /tmp/start.sh
+CMD		sh start_mysql.sh
