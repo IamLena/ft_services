@@ -35,15 +35,18 @@ kubectl apply -f srcs/metallb.yaml
 echo "${green}Building images...${reset}"
 echo "${yellow}mysql${reset}"
 docker build -t mysql-image srcs/images/mysql
+docker build -t nginx-image srcs/images/nginx
 
 echo "${green}Loading images...${reset}"
 echo "${yellow}mysql${reset}"
 kind load docker-image mysql-image
+kind load docker-image nginx-image
 
 echo "${green}Creating services...${reset}"
 echo "${yellow}mysql${reset}"
 kubectl apply -f srcs/services/pv.yaml
 kubectl apply -f srcs/services/mysql.yaml
+kubectl apply -f srcs/services/nginx.yaml
 kubectl apply -f srcs/services/pma.yaml
 
 echo "${green}Your dashboard token:${reset}"
