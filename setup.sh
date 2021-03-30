@@ -34,7 +34,7 @@ kubectl apply -f srcs/metallb.yaml
 
 echo "${green}Building images...${reset}"
 echo "${yellow}mysql${reset}"
-docker build -t mysql-image /srcs/images/mysql
+docker build -t mysql-image srcs/images/mysql
 
 echo "${green}Loading images...${reset}"
 echo "${yellow}mysql${reset}"
@@ -42,9 +42,9 @@ kind load docker-image mysql-image
 
 echo "${green}Creating services...${reset}"
 echo "${yellow}mysql${reset}"
-kubectl apply -f /srcs/services/pv.yaml
-kubectl apply -f /srcs/services/mysql.yaml
-kubectl apply -f /srcs/services/pma.yaml
+kubectl apply -f srcs/services/pv.yaml
+kubectl apply -f srcs/services/mysql.yaml
+kubectl apply -f srcs/services/pma.yaml
 
 echo "${green}Your dashboard token:${reset}"
 TOKENNAME=`kubectl describe serviceaccount admin-user -n kubernetes-dashboard | grep 'Tokens' | awk  '{print $2}'`
