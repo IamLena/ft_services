@@ -36,11 +36,13 @@ echo "${green}Building images...${reset}"
 echo "${yellow}mysql${reset}"
 docker build -t mysql-image srcs/images/mysql
 docker build -t nginx-image srcs/images/nginx
+docker build -t pma-image srcs/images/pma
 
 echo "${green}Loading images...${reset}"
 echo "${yellow}mysql${reset}"
 kind load docker-image mysql-image
 kind load docker-image nginx-image
+kind load docker-image pma-image
 
 echo "${green}Creating services...${reset}"
 echo "${yellow}mysql${reset}"

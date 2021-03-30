@@ -35,8 +35,8 @@ $cfg['Servers'][$i]['port'] = '3306'; #
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = true; #
 
-$cfg['Servers'][$i]['user'] = 'bshang'; #
-$cfg['Servers'][$i]['password'] = 'mypass'; #
+$cfg['Servers'][$i]['user'] = 'test'; #
+$cfg['Servers'][$i]['password'] = 'test'; #
 
 /**
  * phpMyAdmin configuration storage settings.
