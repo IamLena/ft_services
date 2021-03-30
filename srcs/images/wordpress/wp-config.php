@@ -23,10 +23,10 @@
 define( 'DB_NAME', 'wordpress' );
 
 /** MySQL database username */
-define( 'DB_USER', 'bshang' );
+define( 'DB_USER', 'test' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', 'mypass' );
+define( 'DB_PASSWORD', 'test' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'mysql-service' );
@@ -37,8 +37,8 @@ define( 'DB_CHARSET', 'utf8' );
 /** The Database Collate type. Don't change this if in doubt. */
 define( 'DB_COLLATE', '' );
 
-define( 'WP_HOME', 'http://192.168.99.231:5050' ); # EXTERNAL IP
-define( 'WP_SITEURL', 'http://192.168.99.231:5050' ); # EXTERNAL IP
+define( 'WP_HOME', 'http://172.18.0.220:5050' ); # EXTERNAL IP
+define( 'WP_SITEURL', 'http://172.18.0.220:5050' ); # EXTERNAL IP
 
 /**#@+
  * Authentication Unique Keys and Salts.

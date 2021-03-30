@@ -1,5 +1,5 @@
 GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password';
-CREATE DATABASE test_db;
+CREATE DATABASE wordpress;
 CREATE USER 'test'@'%' IDENTIFIED BY 'test';
-GRANT ALL PRIVILEGES ON test.* TO 'test'@'%';
+GRANT ALL PRIVILEGES ON wordpress TO 'test'@'%';
 FLUSH PRIVILEGES;
