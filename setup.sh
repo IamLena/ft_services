@@ -29,7 +29,7 @@ data:
     - name: default
       protocol: layer2
       addresses:
-      - $METALLBRANGE" >> srcs/metallb.yaml
+      - $METALLBRANGE" > srcs/metallb.yaml
 kubectl apply -f srcs/metallb.yaml
 
 echo "${green}Building images...${reset}"

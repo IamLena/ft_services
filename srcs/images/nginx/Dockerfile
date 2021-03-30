@@ -5,7 +5,7 @@ RUN		apk add nginx openssl openssh supervisor
 
 RUN		mkdir -p /run/nginx && chown -R nginx:nginx /run/nginx
 
-# COPY	./nginx.conf /etc/nginx/.
+COPY	./nginx.conf /etc/nginx/
 # COPY	index.html /data/app/index.html
 
 RUN		openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
